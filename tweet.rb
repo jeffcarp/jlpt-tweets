@@ -24,8 +24,10 @@ end
 # fix: put a space after commas in definition
 word['english'] = word['english'].gsub ',', ', '
 
+word['english'].strip!
+
 str = ""
-if word.has_key? 'kanji' && word['kanji'] != word['hiragana']
+if word['kanji'] && word['kanji'] != word['hiragana']
   str += "#{word['kanji']} - #{word['hiragana']}\n#{word['english']}"
 else
   str += "#{word['hiragana']}\n#{word['english']}"
