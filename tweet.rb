@@ -1,8 +1,9 @@
 require 'json'
 require 'twitter'
+require 'time'
 
 # open vocab array
-input = JSON.parse(IO.read('vocab-shuffle.json'))
+input = JSON.parse(IO.read('/home/jeff/gh/jeffcarp/jlpt-tweets/vocab-shuffle.json'))
 
 # pick a vocab item
 # the offset is hard coded to be the number of days past 12/1/2013 
@@ -12,7 +13,8 @@ word = input[offset]
 
 raise "No word" if !word
 
-puts word.inspect 
+puts Time.now.utc.iso8601
+puts word.inspect
 
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV['JLPT_TWTR_CONSUMER_KEY']
