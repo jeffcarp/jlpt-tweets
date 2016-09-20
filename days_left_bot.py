@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 import tweepy
-import yaml
+import json
 from google.appengine.ext import ndb
 
 class TwitterCredentials(ndb.Model):
@@ -20,6 +20,9 @@ class DaysLeftBot:
         auth = tweepy.OAuthHandler(creds.API_KEY, creds.API_SECRET)
         auth.set_access_token(creds.ACCESS_TOKEN, creds.ACCESS_TOKEN_SECRET)
         self.api = tweepy.API(auth)
+
+        with open('vocab-shuffle.json') as file:
+            vocab_words = json.loads(file.read())
 
     def tweet_current_datetime(self):
         JST = datetime.timedelta(hours=9)

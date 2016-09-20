@@ -6,7 +6,7 @@ require 'time'
 input = JSON.parse(IO.read('/home/jeff/gh/jeffcarp/jlpt-tweets/vocab-shuffle.json'))
 
 # pick a vocab item
-# the offset is hard coded to be the number of days past 12/1/2013 
+# the offset is hard coded to be the number of days past 12/1/2013
 offset = (Date.today - Date.new(2013, 12, 1)).to_i
 
 word = input[offset]
