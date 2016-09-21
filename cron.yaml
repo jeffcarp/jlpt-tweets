@@ -1,5 +1,4 @@
 cron:
 - description: tweet job
-  url: /days-left-bot
-  schedule: every 2 hours synchronized
-  timezone: Asia/Tokyo
+  url: /tweet
+  schedule: every 24 hours

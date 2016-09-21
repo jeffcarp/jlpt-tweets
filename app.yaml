@@ -7,7 +7,7 @@ libraries:
   version: latest
 
 handlers:
-- url: /days-left-bot
+- url: /tweet
   script: main.application
   login: admin
 

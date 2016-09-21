@@ -4,15 +4,6 @@ import tweepy
 import json
 from google.appengine.ext import ndb
 
-class TwitterCredentials(ndb.Model):
-    API_KEY = ndb.StringProperty()
-    API_SECRET = ndb.StringProperty()
-    ACCESS_TOKEN = ndb.StringProperty()
-    ACCESS_TOKEN_SECRET = ndb.StringProperty()
-
-    @classmethod
-    def get_first(cls):
-        return cls.query().fetch(1)[0]
 
 class DaysLeftBot:
     def __init__(self):
